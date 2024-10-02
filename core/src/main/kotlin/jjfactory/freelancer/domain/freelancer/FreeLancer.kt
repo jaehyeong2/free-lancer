@@ -18,9 +18,16 @@ class FreeLancer(
 
     @CreationTimestamp
     var createdAt: LocalDateTime? = null
-
     @UpdateTimestamp
     var updatedAt: LocalDateTime? = null
+
+    var isExposed: Boolean = false
+    var exposedAt: LocalDateTime? = null
+
+    fun exposeProfile(){
+        isExposed = true
+        exposedAt = LocalDateTime.now()
+    }
 
     fun getKoreanFullName(): String {
         return lastName + firstName
